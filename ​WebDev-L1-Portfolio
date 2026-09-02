@@ -1,1 +1,59 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ganesh Nikam - Portfolio</title>
+</head>
+<body>
+
+    <!-- Header / Hero Section -->
+    <header>
+        <h1>Ganesh Shankar Nikam</h1>
+        <p><strong>Role:</strong> Web Developer Intern</p>
+    </header>
+
+    <hr>
+
+    <!-- About Me Section -->
+    <section>
+        <h2>About Me (माझ्याबद्दल)</h2>
+        <p>नमस्कार! मी गणेश निकम. मला वेब डेव्हलपमेंट शिकायला आणि नवीन डिझाईन्स बनवायला आवडते.</p>
+    </section>
+
+    <hr>
+
+    <!-- Skills Section -->
+    <section>
+        <h2>Skills (कौशल्ये)</h2>
+        <ul>
+            <li>HTML5 📄</li>
+            <li>CSS3 🎨</li>
+            <li>Git & GitHub 🐙</li>
+        </ul>
+    </section>
+
+    <hr>
+
+    <!-- Projects Section -->
+    <section>
+        <h2>Projects (माझे प्रोजेक्ट्स)</h2>
+        <div>
+            <h3>🍕 Smart Pizza Landing Page</h3>
+            <p>हा माझा OIBSIP इंटरनशिपमधील पहिला प्रोजेक्ट आहे.</p>
+        </div>
+    </section>
+
+    <hr>
+
+    <!-- Contact Section -->
+    <section>
+        <h2>Contact Me (संपर्क)</h2>
+        <p>📱 <strong>Phone:</strong> 8378901004</p>
+        <p>📧 <strong>Email:</strong> ganeshnikam1004@gmail.com</p>
+        <p>🔗 <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/ganesh-nikam-800083411" target="_blank">Ganesh Nikam Profile</a></p>
+    </section>
+
+</body>
+</html>
 
