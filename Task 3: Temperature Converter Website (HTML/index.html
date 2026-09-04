@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Converter</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #0f172a;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .converter-card {
+            background: #1e293b;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+            width: 340px;
+            text-align: center;
+        }
+
+        .converter-card h2 {
+            margin-bottom: 20px;
+            color: #38bdf8;
+            font-size: 22px;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        .input-group label {
+            display: block;
+            font-size: 14px;
+            margin-bottom: 6px;
+            color: #94a3b8;
+        }
+
+        .input-group input, .input-group select {
+            width: 100%;
+            padding: 10px;
+            border-radius: 6px;
+            border: 1px solid #334155;
+            background-color: #0f172a;
+            color: #fff;
+            outline: none;
+            font-size: 15px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #38bdf8;
+            color: #0f172a;
+            font-weight: bold;
+            font-size: 16px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #0284c7;
+            color: #fff;
+        }
+
+        .result-box {
+            margin-top: 20px;
+            padding: 15px;
+            background: #0f172a;
+            border-radius: 6px;
+            border: 1px solid #334155;
+        }
+
+        .result-box p {
+            font-size: 12px;
+            color: #94a3b8;
+        }
+
+        .result-box h3 {
+            margin-top: 5px;
+            color: #38bdf8;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="converter-card">
+        <h2>Temperature Converter</h2>
+        
+        <div class="input-group">
+            <label for="degree">Degrees</label>
+            <input type="number" id="degree" placeholder="Enter number" value="0">
+        </div>
+
+        <div class="input-group">
+            <label for="type">Type</label>
+            <select id="type">
+                <option value="celsius">Celsius (°C)</option>
+                <option value="fahrenheit">Fahrenheit (°F)</option>
+                <option value="kelvin">Kelvin (K)</option>
+            </select>
+        </div>
+
+        <button id="convert-btn">Convert</button>
+
+        <div class="result-box">
+            <p>Result:</p>
+            <h3 id="result-text">--</h3>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('convert-btn').addEventListener('click', function () {
+            const degreeVal = parseFloat(document.getElementById('degree').value);
+            const typeVal = document.getElementById('type').value;
+            const resultText = document.getElementById('result-text');
+
+            if (isNaN(degreeVal)) {
+                resultText.innerText = "Please enter a valid number";
+                return;
+            }
+
+            let converted = "";
+
+            if (typeVal === 'celsius') {
+                const fahrenheit = (degreeVal * 9/5) + 32;
+                const kelvin = degreeVal + 273.15;
+                converted = `${fahrenheit.toFixed(2)} °F | ${kelvin.toFixed(2)} K`;
+            } else if (typeVal === 'fahrenheit') {
+                const celsius = (degreeVal - 32) * 5/9;
+                const kelvin = celsius + 273.15;
+                converted = `${celsius.toFixed(2)} °C | ${kelvin.toFixed(2)} K`;
+            } else if (typeVal === 'kelvin') {
+                const celsius = degreeVal - 273.15;
+                const fahrenheit = (celsius * 9/5) + 32;
+                converted = `${celsius.toFixed(2)} °C | ${fahrenheit.toFixed(2)} °F`;
+            }
+
+            resultText.innerText = converted;
+        });
+    </script>
+
+</body>
+</html>
